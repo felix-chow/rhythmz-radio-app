@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Link, Route, Routes } from "react-router-dom";
+import AboutRhythmzRadio from "./components/AboutRhythmzRadio";
+import Home from "./components/Home";
+import OnAirTalent from "./components/OnAirTalent";
+import SongRequest from "./components/RequestASong";
+// import TheTeam from "./components/TheTeam";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <Link to="/">Rhythmz Radio</Link>
+      </div>
+      <div>
+        <Link to="/about-rhythmz-radio">About Rhythmz Radio</Link>
+        {/* <Link to="">The Team</Link> */}
+        <Link to="/on-air-talent">On-Air Talent</Link>
+        <Link to="/request">Song Request</Link>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/about-rhythmz-radio" exact element={<AboutRhythmzRadio />} />
+          {/* <Route path="t/" element={<TheTeam />} /> */}
+          <Route path="/on-air-talent" exact element={<OnAirTalent />} />
+          <Route path="/request" exact element={<SongRequest />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
