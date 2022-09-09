@@ -8,14 +8,19 @@ import SongRequest from "./components/RequestASong";
 const App = () => {
   return (
     <>
-      <div>
-        <Link to="/">Rhythmz Radio</Link>
-      </div>
-      <div>
-        <Link to="/about-rhythmz-radio">About Rhythmz Radio</Link>
-        {/* <Link to="">The Team</Link> */}
-        <Link to="/on-air-talent">On-Air Talent</Link>
-        <Link to="/request">Song Request</Link>
+      <div className="p-3">
+        <nav className="d-flex justify-content-between mb-4">
+          <span>
+            <Link className="navbar-brand text-decoration-none" to="/">Rhythmz Radio</Link>
+          </span>
+          <div>
+            <Link className="text-secondary me text-decoration-none" to="/about-rhythmz-radio">About Rhythmz Radio</Link>
+            {/* <Link to="">The Team</Link> */}
+            <Link className="text-secondary m-4 text-decoration-none" to="/on-air-talent">On-Air Talent</Link>
+            <Link className="text-secondary text-decoration-none" to="/request">Song Request</Link>
+          </div>
+        </nav>
+
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/about-rhythmz-radio" exact element={<AboutRhythmzRadio />} />
